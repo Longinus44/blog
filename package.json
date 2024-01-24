@@ -1,0 +1,46 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "start": " nodemon ./src/index.ts",
+    "build": "tsc",
+    "tests": "jest",
+    "test": "mocha --require ts-node/register ./src/**/*.test.ts",
+    "knex": "ts-node ./node_modules/Knex/bin/cli.js --knexfile ./src/knexfile.ts",
+    "db.run.migration": "yarn run knex -- migrate:latest",
+    "db.generate.migration": "yarn run knex -- migrate:make",
+    "db.run.migrate.down": "yarn run knex migrate:down",
+    "db.run.migrate.up": "yarn run knex migrate:up",
+    "db.run.migrate.rollback": "yarn run knex -- migrate:rollback",
+    "db.run.migrate.list": "yarn run knex migrate:list",
+    "db.run.make.seed": "knex seed:make"
+  },
+  "dependencies": {
+    "@types/inversify": "^2.0.33",
+    "add": "^2.0.6",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "inversify": "^6.0.2",
+    "joi": "^17.12.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "nodemon": "^3.0.3",
+    "objection": "^3.1.3",
+    "pg": "^8.11.3",
+    "uuidv4": "^6.2.13",
+    "yarn": "^1.22.21"
+  }
+}
