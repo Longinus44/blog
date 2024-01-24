@@ -27,6 +27,19 @@ export class UserService {
         }
     }
 
+    async fetchUserById(user_id:string){
+        try {
+            const user = await this.userRepository.fetchUserById(user_id)
+            user? user : AppConfig.USER_NOT_FOUND
+        } catch (error) {
+            if (error instanceof HttpError) {
+                const handledError = handleHttpError(error);
+                return handledError.message;
+            } else {
+                return new HttpError(500, AppConfig.INTERNAL_ERROR);
+            }
+        }
+    }
 
     async createUser(userData: IUser) {
         try {

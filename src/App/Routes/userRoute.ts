@@ -7,6 +7,7 @@ import { tokenValidation } from "../Http/Auth/AuthToken";
 const router = Router()
 
 router.get('/', tokenValidation,UserController.fetchAllUser)
+router.get('/:id',tokenValidation,UserController.fetchUserById)
 router.post("/login",loginValidator, validate, UserController.userlogin)
 router.post("/create",bodyValidator,validate, UserController.userRegistration)
 router.patch("/:id", tokenValidation, UserController.userUpdate)

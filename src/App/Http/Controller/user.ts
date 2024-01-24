@@ -21,6 +21,20 @@ export class UserController {
             }
         }
     }
+    static async fetchUserById(req: Request, res: Response) {
+        try {
+            const user_id = req.params['id']
+            const user = await userService.fetchUserById(user_id)
+            res.send(user)
+        } catch (error) {
+            if (error instanceof HttpError) {
+                const handledError = handleHttpError(error);
+                res.send(handledError.message);
+            } else {
+                res.status(500).send({ message: AppConfig.INTERNAL_ERROR });
+            }
+        }
+    }
 
     static async userRegistration(req: Request, res: Response) {
         try {

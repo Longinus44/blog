@@ -23,17 +23,15 @@
     "db.run.migrate.up": "yarn run knex migrate:up",
     "db.run.migrate.rollback": "yarn run knex -- migrate:rollback",
     "db.run.migrate.list": "yarn run knex migrate:list",
-    "db.run.make.seed": "knex seed:make"
+    "db.run.make.seed": "yarn run seed:make"
   },
   "dependencies": {
-    "@types/inversify": "^2.0.33",
     "add": "^2.0.6",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.0",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
-    "inversify": "^6.0.2",
     "joi": "^17.12.0",
     "jsonwebtoken": "^9.0.2",
     "knex": "^3.1.0",
