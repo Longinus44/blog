@@ -12,7 +12,7 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "start": " nodemon ./src/index.ts",
+    "start": " nodemon ./src/app.ts",
     "build": "tsc",
     "tests": "jest",
     "test": "mocha --require ts-node/register ./src/**/*.test.ts",
